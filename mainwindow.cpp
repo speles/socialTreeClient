@@ -70,6 +70,7 @@ void MainWindow::sendClicked()
     if (ui->rbtnAdd->isChecked())
         dataStr.append(" ").append(ui->edtParent->text()).append(" ").append(ui->edtImage->text());
     addLogLine(dataStr, SEND);
+    dataStr.append('\n');
     QByteArray data;
     data.append(dataStr);
     connection->write(data);
